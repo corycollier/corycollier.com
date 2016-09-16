@@ -1,38 +1,33 @@
 language: php
 php:
-  - 5.5
-  - 5.6
-  - 7.0
-
+- 5.6
+- 7.0
 sudo: false
-
 env:
   global:
-    - SIMPLETEST_DB=sqlite://tmp/site.sqlite
-    - SIMPLETEST_BASE_URL="http://127.0.0.1:8080"
+  - SIMPLETEST_DB=sqlite://tmp/site.sqlite
+  - SIMPLETEST_BASE_URL="http://127.0.0.1:8080"
   matrix:
-    - RELEASE=stable COMPOSER_CHANNEL=stable
-    - RELEASE=dev COMPOSER_CHANNEL=stable
-    - RELEASE=stable COMPOSER_CHANNEL=snapshot
-
+  - RELEASE=stable COMPOSER_CHANNEL=stable
+  - RELEASE=dev COMPOSER_CHANNEL=stable
+  - RELEASE=stable COMPOSER_CHANNEL=snapshot
+  - secure: i7wJkLcIkWBg2aF0aG/M8g/a05VY3JRGMnk3oQW/nfqBHiMVVUWRRFL+M78gd83iG44/xmhr9L1krG/1WuZW/KoqVWz6BiZnwnQVpcmPqw2cM2DFa42AVWbT+gyMsuT00Pj4522lcwFMuOx1N1zYlAfQnI5Zy2sRHNgiYMCzC0s1yOcIdiw30j3eXqVPEjSygoAXYFDFhoNC1dAPYik3KxVBTKUUzLnBcu3Ejj0peNOW9RBWLO27gSz5PPd6OyhOeKcb9ztQXnkk77v5G2l5NqiRKp4NXUGkj9a+vW8sZQOogP0fzZHjRWsfqJTg4b3pOAZtz+zbtqLdn/uTWkVsyW7zKhMprJyjY50nTI2GKxA3ZCxJKdS1iO51disEHcbf/16dH0RNJuPGlrXnOTGSAX5y69p3+WATArhTAZcOVbquWJhERcKDDg9qGowPHVjjkGAmlNmPsH9u9hm+ovEGHHeYpb5Duylz/NvB9au3T2SpC6FDTxiZSnY6IPH4sq92oiWE0ZgoyGgQrSBfI0VkyFTUFSHmGy7XSS7P+O9G8LbgMFzOobCJbPWXqBsq8QDj8mEa1QPc0cHvo5pw2GceClCTAzhwM2gzkBKrWo9ExbqmC+H4tQMEWuMIZGoGMt/Uaslw4BFjPcckbgLeBA5D0WkPfJpBs9srRpzBUW/TNH8=
+  - secure: V3r4KMkLHrVERh3ZdZ065FsGWK0ckOSl8M7V9JBLJv70uGMyglBDcsWTM9pGslwGNjCh6xRkwE9AbtoO/ANIFHRxTdiCFxIsTyQ/SU5+PtlpX5KtUybxcNRDrvjM5lQpmRZMmOUnqbA4bP24vni0fJGRRRozJ9l/jh9nrHovAxG8WtvwjajUvOwd0GHqZ0xJgHqBxT5OCvAvuvdvF7YOPt5yhgblhFaydFKAfyWs2MG59rYdLisbgD5WgySFQNbhMzffNN6U/2I1qhJKtp92L95rZR+C1Xb/Kf1e2eTb+ToxGey2dNk6NINBnVTVOlxvBKlv2cNpA8GXYKwhM6uvLzicyTFvMK0nhAfMZMZp6L6R2u9yEXld6xMUZKgOjRW9PeGcG2iKva0HI3izp4nrPIDy0UHvtFNc9SIU3ekB4eN7l0J4Mmg15nXVuFgDxh5uRr6wtYg+nGIJw9H5djrFJY4imMdga4WmlsEsoc3TD0fOr9qe9N1Xor5UF0lf4Gzm1XeoGpg+dbzwmuAtOSgm0wjoY1f2n4WC4Ykztg11nstfhCwCxXISosgV+eIvLgWnF6vtfKXELcL8xBDqLC4Tkmg+smwTPxLSraoDGzhI9oQmpyjseB0zIMEzr9Yol/RbrqEbKigWejJiBRIxW5klBQ4fGupaPnyP1RKOy5ASmnc=
 before_install:
-  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-  - phpenv config-rm xdebug.ini
-  - composer --verbose self-update --$COMPOSER_CHANNEL
-  - composer --version
-
+- echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+- phpenv config-rm xdebug.ini
+- composer --verbose self-update --$COMPOSER_CHANNEL
+- composer --version
 install:
-  - composer --verbose install
-
+- composer --verbose install
 script:
-  - if [[ $RELEASE = dev ]]; then composer --verbose require --no-update drupal/core:8.1.x-dev; fi;
-  - if [[ $RELEASE = dev ]]; then composer --verbose update; fi;
-  - cd $TRAVIS_BUILD_DIR/web
-  - ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
-  - ./../vendor/bin/drush runserver http://127.0.0.1:8080 &
-  - sleep 3
-  # Skip core/tests/Drupal/Tests/ComposerIntegrationTest.php because web/ has no composer.json
-  # Ignore PageCache group temporarily, @see https://www.drupal.org/node/2770673
-  - ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,PageCache
-  - ./../vendor/bin/drush
-  - ./../vendor/bin/drupal
+- if [[ $RELEASE = dev ]]; then composer --verbose require --no-update drupal/core:8.1.x-dev;
+  fi;
+- if [[ $RELEASE = dev ]]; then composer --verbose update; fi;
+- cd $TRAVIS_BUILD_DIR/web
+- ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
+- ./../vendor/bin/drush runserver http://127.0.0.1:8080 &
+- sleep 3
+- ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,PageCache
+- ./../vendor/bin/drush
+- ./../vendor/bin/drupal
