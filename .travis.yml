@@ -14,8 +14,8 @@ env:
   - secure: i7wJkLcIkWBg2aF0aG/M8g/a05VY3JRGMnk3oQW/nfqBHiMVVUWRRFL+M78gd83iG44/xmhr9L1krG/1WuZW/KoqVWz6BiZnwnQVpcmPqw2cM2DFa42AVWbT+gyMsuT00Pj4522lcwFMuOx1N1zYlAfQnI5Zy2sRHNgiYMCzC0s1yOcIdiw30j3eXqVPEjSygoAXYFDFhoNC1dAPYik3KxVBTKUUzLnBcu3Ejj0peNOW9RBWLO27gSz5PPd6OyhOeKcb9ztQXnkk77v5G2l5NqiRKp4NXUGkj9a+vW8sZQOogP0fzZHjRWsfqJTg4b3pOAZtz+zbtqLdn/uTWkVsyW7zKhMprJyjY50nTI2GKxA3ZCxJKdS1iO51disEHcbf/16dH0RNJuPGlrXnOTGSAX5y69p3+WATArhTAZcOVbquWJhERcKDDg9qGowPHVjjkGAmlNmPsH9u9hm+ovEGHHeYpb5Duylz/NvB9au3T2SpC6FDTxiZSnY6IPH4sq92oiWE0ZgoyGgQrSBfI0VkyFTUFSHmGy7XSS7P+O9G8LbgMFzOobCJbPWXqBsq8QDj8mEa1QPc0cHvo5pw2GceClCTAzhwM2gzkBKrWo9ExbqmC+H4tQMEWuMIZGoGMt/Uaslw4BFjPcckbgLeBA5D0WkPfJpBs9srRpzBUW/TNH8=
   - secure: V3r4KMkLHrVERh3ZdZ065FsGWK0ckOSl8M7V9JBLJv70uGMyglBDcsWTM9pGslwGNjCh6xRkwE9AbtoO/ANIFHRxTdiCFxIsTyQ/SU5+PtlpX5KtUybxcNRDrvjM5lQpmRZMmOUnqbA4bP24vni0fJGRRRozJ9l/jh9nrHovAxG8WtvwjajUvOwd0GHqZ0xJgHqBxT5OCvAvuvdvF7YOPt5yhgblhFaydFKAfyWs2MG59rYdLisbgD5WgySFQNbhMzffNN6U/2I1qhJKtp92L95rZR+C1Xb/Kf1e2eTb+ToxGey2dNk6NINBnVTVOlxvBKlv2cNpA8GXYKwhM6uvLzicyTFvMK0nhAfMZMZp6L6R2u9yEXld6xMUZKgOjRW9PeGcG2iKva0HI3izp4nrPIDy0UHvtFNc9SIU3ekB4eN7l0J4Mmg15nXVuFgDxh5uRr6wtYg+nGIJw9H5djrFJY4imMdga4WmlsEsoc3TD0fOr9qe9N1Xor5UF0lf4Gzm1XeoGpg+dbzwmuAtOSgm0wjoY1f2n4WC4Ykztg11nstfhCwCxXISosgV+eIvLgWnF6vtfKXELcL8xBDqLC4Tkmg+smwTPxLSraoDGzhI9oQmpyjseB0zIMEzr9Yol/RbrqEbKigWejJiBRIxW5klBQ4fGupaPnyP1RKOy5ASmnc=
 addons:
-    code_climate:
-        repo_token: 2fda9da447993fe173be2bc615ab8746c54c00a7b87809af4b6852b98caa8473
+  code_climate:
+    repo_token: 2fda9da447993fe173be2bc615ab8746c54c00a7b87809af4b6852b98caa8473
 before_install:
 - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
 - phpenv config-rm xdebug.ini
@@ -27,7 +27,6 @@ script:
 - ./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite
 - ./../vendor/bin/drush runserver http://127.0.0.1:8080 &
 - sleep 3
-- ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,PageCache
-- echo $MYSQL_PASSWORD
+- ./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,PageCache --coverage-clover build/logs/clover.xml
 after_script:
-  - vendor/bin/test-reporter
+- ./../vendor/bin/test-reporter
