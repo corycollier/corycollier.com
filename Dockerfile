@@ -21,4 +21,4 @@ ADD . /var/www/html/corycollier.com
 WORKDIR /var/www/html/corycollier.com/
 
 RUN wget https://raw.githubusercontent.com/composer/getcomposer.org/1b137f8bf6db3e79a38a5bc45324414a6b1f9df2/web/installer -O - -q | php -- --quiet
-RUN php -n composer.phar install -vvv
+RUN php -n composer.phar install --no-dev -vvv
