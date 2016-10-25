@@ -5,7 +5,8 @@ MAINTAINER Cory Collier <corycollier@corycollier.com>
 RUN apt-get -y update
 RUN apt-get -y install \
     wget \
-    git
+    git \
+    vim
 
 
 # PHP Configuration updates

@@ -16,3 +16,13 @@ web/sites/*/files
 # files to ignore from composer
 composer.lock
 composer.phar
+
+
+# Configuration Stuff
+system.site.yml
+shortcut.set.default.yml
+block.block.seven*
+block.block.bartik*
+
+tmp
+!tmp/.empty
