@@ -9,6 +9,7 @@ env:
   global:
     - SIMPLETEST_DB=sqlite://tmp/site.sqlite
     - SIMPLETEST_BASE_URL="http://127.0.0.1:8080"
+    - REPO="corycollier/web"
     - secure: V3r4KMkLHrVERh3ZdZ065FsGWK0ckOSl8M7V9JBLJv70uGMyglBDcsWTM9pGslwGNjCh6xRkwE9AbtoO/ANIFHRxTdiCFxIsTyQ/SU5+PtlpX5KtUybxcNRDrvjM5lQpmRZMmOUnqbA4bP24vni0fJGRRRozJ9l/jh9nrHovAxG8WtvwjajUvOwd0GHqZ0xJgHqBxT5OCvAvuvdvF7YOPt5yhgblhFaydFKAfyWs2MG59rYdLisbgD5WgySFQNbhMzffNN6U/2I1qhJKtp92L95rZR+C1Xb/Kf1e2eTb+ToxGey2dNk6NINBnVTVOlxvBKlv2cNpA8GXYKwhM6uvLzicyTFvMK0nhAfMZMZp6L6R2u9yEXld6xMUZKgOjRW9PeGcG2iKva0HI3izp4nrPIDy0UHvtFNc9SIU3ekB4eN7l0J4Mmg15nXVuFgDxh5uRr6wtYg+nGIJw9H5djrFJY4imMdga4WmlsEsoc3TD0fOr9qe9N1Xor5UF0lf4Gzm1XeoGpg+dbzwmuAtOSgm0wjoY1f2n4WC4Ykztg11nstfhCwCxXISosgV+eIvLgWnF6vtfKXELcL8xBDqLC4Tkmg+smwTPxLSraoDGzhI9oQmpyjseB0zIMEzr9Yol/RbrqEbKigWejJiBRIxW5klBQ4fGupaPnyP1RKOy5ASmnc=
     - secure: TmSnFsl7XpYEEZneVDOfslicgiDor+hhRisxEJgd9CETI3fnP2XupgO6I4oG+03gc+0G/PVpbKWGFvczvkd6wXDS2bFKtMLbUu96wIfLtmsK0HuQvw/v/Z6tchgFEEmdQ2FR3owQoqV+4B5XWhGLDJfp+fplmRl0otqt3C9JkbnuMbSAEbCegpZBaH8oTHMcHYWiBNLIoXje1azCIpcVqGEYXAko12T17YwQAvgC3NTbHQfhzE07e4gNlBMxBp2g8yB/KjjBJbQPw36H3LE7UeAt26on7bcj8+05sfEZeL6gpa2DRrOTcimKbzUyLrZHMTLmLAyH+X85w7R2f+PBNIEqY5NOnG4lN37OHU8Cg/2wYsZV5hZ5ML/MKZhdSV7AkxYL/0ZAEp1w8jtWEunUM9JDykLtswb2lkCoJeX4AjLHhrKIAmQYrTSSXuy60sEo2hXOm7kpb2ptQdhd2e9Gziq5TscLPi7bof++l/7sx8geCxM5MFUWSLQmrVhcfzY5kdEykEmfmBmR+ny35GyVEowgxEaD2nDFKE6zWnQBVYeXSIlxoJ9g4g+uObOwHNHUmeJ6WY1DnrCaYhDWyTABO/sSgw68jXLnIU5brXBDvEU4jxBNcqSNh1JcGXtGukZ31ZvtydwRMsMnP+28Jc1GLYT/Mh2TSaUENV5ls0QRs3s=
     - secure: YKJnSPsiR2ghrnHab8cgQUHKtHDjP0iUESRpPlaB2UOBfs0eJxRDCjn00+WE6iBMvBZJJjRd0EjEKPWF2yTV2VWSq4xvONQxMe+g6c0/PIEysgFunooaoDZ6dbk+6MkVZ9f2Udqwi/mAV3fTAHYgB298dN9jGJKpkrAGC9Z2FkeFcHqODmoJ66gclqtOxilv7I5/CihYef1LNqEw88u5mrBU+G0jcd/Qh+Krv3L1SUm0xq5Y6dL3BR8ZyBykprAo5Ik5NHWZx9kb3aYRHcbdpkKzuwOUxiLxwY0YZGqpxzM+vvf1Hy+95sGEHRzFNAhpsTQ6JnaXXNUcok10lcRPGvtdzFJcKbowLaw2ZEcdNS5cmHf+UY/fTB1ALWUz6E9RU/VYf8ug43iTuhVcJDm1mh5mkqCPvf5dNIPHsAx8ZiRV1YX7EH9xJWCVCXIPnFRnm6GvnhnHdys5ASjoAofHudizZvxOd3Tq6eGFEn79opf7k3dKyc+IKvPy7a5hGvohiBZax6MRXDxAwHIe5qyY2FKL7LCDN8YBCwfOvA/rvqabOXm0/bxU00Q7qSsaEbRFAdGRC/LFf4yN1V0QTgk/i9/V+tLfPyiLzd1pGhyrDqk7mMHHB2nNGXirMEy/Xt4SLpa6OXplyEEE/83xVVYElW6YDTzFOV2+PFEtGBkCOoA=
@@ -32,7 +33,6 @@ after_script:
   - "./../vendor/bin/test-reporter"
 after_success:
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-  - export REPO="corycollier/web"
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - docker build -f Dockerfile -t $REPO:$COMMIT .
   - docker tag $REPO:$COMMIT $REPO:$TAG
