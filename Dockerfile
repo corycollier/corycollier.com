@@ -14,8 +14,6 @@ RUN echo "date.timezone = 'America/New_York'" >> /etc/php.ini
 # Add Drupal nginx config
 ADD config/httpd.conf /etc/apache2/sites-enabled/000-default.conf
 
-RUN echo "Listen 80" >> /etc/apache2/ports.conf
-
 RUN a2enmod rewrite headers
 
 # Add files to the running image
