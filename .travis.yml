@@ -17,7 +17,7 @@ addons:
   code_climate:
     repo_token: 2fda9da447993fe173be2bc615ab8746c54c00a7b87809af4b6852b98caa8473
 script:
-  - docker build -t corycollier/corycollier.com
+  - docker build -t corycollier/corycollier.com .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
