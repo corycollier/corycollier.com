@@ -1,5 +1,6 @@
 {
-    "name": "corycollier/corycollier",
+    "name": "corycollier/corycollier.com",
+    "description": "Public website for Cory Collier",
     "type": "project",
     "require": {
         "erusev/parsedown": "^1.6",
@@ -9,8 +10,10 @@
     "authors": [
         {
             "name": "Cory Collier",
-            "email": "corycollier@corycollier.com"
+            "email" : "corycollier@corycollier.com",
+            "role": "developer"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
