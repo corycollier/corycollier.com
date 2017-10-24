@@ -10,10 +10,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 $app = new Silex\Application();
 
-$app->get('/', function() use ($app) {
-    return new Response('Home page');
-});
-
 /**
  * function to handle the response as an html view.
  *
@@ -46,6 +42,10 @@ function filename($path) {
         '.html' => '.md',
     ]);
 
+    if (!$file) {
+        $file = 'index.md';
+    }
+
     $filename = __DIR__ . '/../data/' . $file;
 
     return $filename;
@@ -60,7 +60,7 @@ $app->match('{url}', function ($url) use ($app) {
     }
     return view($filename);
 
-})->assert('url', '.+');
+})->assert('url', '.*');
 
 // Handle the problems
 $app->error(function(\Exception $exception, Request $request, $code) {
