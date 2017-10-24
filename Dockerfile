@@ -12,7 +12,7 @@ RUN apt-get -y install \
 RUN echo "date.timezone = 'America/New_York'" >> /etc/php.ini
 
 # Add Drupal nginx config
-ADD apache.conf /etc/apache2/sites-enabled/000-default.conf
+ADD config/httpd.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN echo "Listen 8000" >> /etc/apache2/ports.conf
 
