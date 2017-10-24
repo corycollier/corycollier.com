@@ -1,0 +1,16 @@
+{
+    "name": "corycollier/corycollier",
+    "type": "project",
+    "require": {
+        "erusev/parsedown": "^1.6",
+        "silex/silex": "^2.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cory Collier",
+            "email": "corycollier@corycollier.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
