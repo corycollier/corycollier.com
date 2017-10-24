@@ -17,9 +17,10 @@ addons:
   code_climate:
     repo_token: 2fda9da447993fe173be2bc615ab8746c54c00a7b87809af4b6852b98caa8473
 script:
-- docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
-- docker build -f Dockerfile -t $DOCKER_REPO:$COMMIT .
-- docker tag corycollier/web:$COMMIT corycollier/web:$TAG
-- docker tag corycollier/web:$COMMIT corycollier/web:travis-$TRAVIS_BUILD_NUMBER
-- docker push corycollier/web
+  - docker build -t corycollier/corycollier.com .
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push corycollier/corycollier.com
+    fi
