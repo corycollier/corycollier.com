@@ -1,7 +1,6 @@
 language: php
 php:
-- 5.6
-- 7.0
+- 7.1
 sudo: false
 services:
 - docker
@@ -17,24 +16,9 @@ env:
 addons:
   code_climate:
     repo_token: 2fda9da447993fe173be2bc615ab8746c54c00a7b87809af4b6852b98caa8473
-before_install:
-- echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
-- phpenv config-rm xdebug.ini
-- composer --verbose self-update --$COMPOSER_CHANNEL
-install:
-- composer --verbose install --prefer-dist
 script:
-- cd $TRAVIS_BUILD_DIR/web
-- "./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite"
-- "./../vendor/bin/drush runserver http://127.0.0.1:8080 &"
-- sleep 3
-- "./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,PageCache,DependencyInjection"
-after_script:
-- "./../vendor/bin/test-reporter"
-after_success:
 - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH
-  ; fi`
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
 - docker build -f Dockerfile -t $DOCKER_REPO:$COMMIT .
 - docker tag corycollier/web:$COMMIT corycollier/web:$TAG
 - docker tag corycollier/web:$COMMIT corycollier/web:travis-$TRAVIS_BUILD_NUMBER
