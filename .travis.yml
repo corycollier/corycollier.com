@@ -1,0 +1,38 @@
+language: php
+php:
+  - 5.6
+  - 7.0
+sudo: false
+env:
+  global:
+    - SIMPLETEST_DB=sqlite://tmp/site.sqlite
+    - SIMPLETEST_BASE_URL="http://127.0.0.1:8080"
+    - secure: V3r4KMkLHrVERh3ZdZ065FsGWK0ckOSl8M7V9JBLJv70uGMyglBDcsWTM9pGslwGNjCh6xRkwE9AbtoO/ANIFHRxTdiCFxIsTyQ/SU5+PtlpX5KtUybxcNRDrvjM5lQpmRZMmOUnqbA4bP24vni0fJGRRRozJ9l/jh9nrHovAxG8WtvwjajUvOwd0GHqZ0xJgHqBxT5OCvAvuvdvF7YOPt5yhgblhFaydFKAfyWs2MG59rYdLisbgD5WgySFQNbhMzffNN6U/2I1qhJKtp92L95rZR+C1Xb/Kf1e2eTb+ToxGey2dNk6NINBnVTVOlxvBKlv2cNpA8GXYKwhM6uvLzicyTFvMK0nhAfMZMZp6L6R2u9yEXld6xMUZKgOjRW9PeGcG2iKva0HI3izp4nrPIDy0UHvtFNc9SIU3ekB4eN7l0J4Mmg15nXVuFgDxh5uRr6wtYg+nGIJw9H5djrFJY4imMdga4WmlsEsoc3TD0fOr9qe9N1Xor5UF0lf4Gzm1XeoGpg+dbzwmuAtOSgm0wjoY1f2n4WC4Ykztg11nstfhCwCxXISosgV+eIvLgWnF6vtfKXELcL8xBDqLC4Tkmg+smwTPxLSraoDGzhI9oQmpyjseB0zIMEzr9Yol/RbrqEbKigWejJiBRIxW5klBQ4fGupaPnyP1RKOy5ASmnc=
+    - secure: TmSnFsl7XpYEEZneVDOfslicgiDor+hhRisxEJgd9CETI3fnP2XupgO6I4oG+03gc+0G/PVpbKWGFvczvkd6wXDS2bFKtMLbUu96wIfLtmsK0HuQvw/v/Z6tchgFEEmdQ2FR3owQoqV+4B5XWhGLDJfp+fplmRl0otqt3C9JkbnuMbSAEbCegpZBaH8oTHMcHYWiBNLIoXje1azCIpcVqGEYXAko12T17YwQAvgC3NTbHQfhzE07e4gNlBMxBp2g8yB/KjjBJbQPw36H3LE7UeAt26on7bcj8+05sfEZeL6gpa2DRrOTcimKbzUyLrZHMTLmLAyH+X85w7R2f+PBNIEqY5NOnG4lN37OHU8Cg/2wYsZV5hZ5ML/MKZhdSV7AkxYL/0ZAEp1w8jtWEunUM9JDykLtswb2lkCoJeX4AjLHhrKIAmQYrTSSXuy60sEo2hXOm7kpb2ptQdhd2e9Gziq5TscLPi7bof++l/7sx8geCxM5MFUWSLQmrVhcfzY5kdEykEmfmBmR+ny35GyVEowgxEaD2nDFKE6zWnQBVYeXSIlxoJ9g4g+uObOwHNHUmeJ6WY1DnrCaYhDWyTABO/sSgw68jXLnIU5brXBDvEU4jxBNcqSNh1JcGXtGukZ31ZvtydwRMsMnP+28Jc1GLYT/Mh2TSaUENV5ls0QRs3s=
+    - secure: YKJnSPsiR2ghrnHab8cgQUHKtHDjP0iUESRpPlaB2UOBfs0eJxRDCjn00+WE6iBMvBZJJjRd0EjEKPWF2yTV2VWSq4xvONQxMe+g6c0/PIEysgFunooaoDZ6dbk+6MkVZ9f2Udqwi/mAV3fTAHYgB298dN9jGJKpkrAGC9Z2FkeFcHqODmoJ66gclqtOxilv7I5/CihYef1LNqEw88u5mrBU+G0jcd/Qh+Krv3L1SUm0xq5Y6dL3BR8ZyBykprAo5Ik5NHWZx9kb3aYRHcbdpkKzuwOUxiLxwY0YZGqpxzM+vvf1Hy+95sGEHRzFNAhpsTQ6JnaXXNUcok10lcRPGvtdzFJcKbowLaw2ZEcdNS5cmHf+UY/fTB1ALWUz6E9RU/VYf8ug43iTuhVcJDm1mh5mkqCPvf5dNIPHsAx8ZiRV1YX7EH9xJWCVCXIPnFRnm6GvnhnHdys5ASjoAofHudizZvxOd3Tq6eGFEn79opf7k3dKyc+IKvPy7a5hGvohiBZax6MRXDxAwHIe5qyY2FKL7LCDN8YBCwfOvA/rvqabOXm0/bxU00Q7qSsaEbRFAdGRC/LFf4yN1V0QTgk/i9/V+tLfPyiLzd1pGhyrDqk7mMHHB2nNGXirMEy/Xt4SLpa6OXplyEEE/83xVVYElW6YDTzFOV2+PFEtGBkCOoA=
+    - secure: ZdJSdkEnznW1/7cIcr2BGdnyuhvG9RwUIlTJ5dcf+/mMKJskBWxSQU5csydBBoHzaqDueKODiVj2sZVAwkm/CcAtmt7lUcFy+sRYv1uk2aEn5iN2YKvdVqWdDcO2OkTettdtTLIOZyPgp1r0G8Ty695Fa9aNcSahJMDtUL2Ycs5NfYrErJGdlhHiO3El6PfDujQAl2rhbyEcxljmYyXwRQPJCIl/wacNZgsDoBSjZE3tvExAr5rE4mwlzdkvpc6l8Yug8r+E+t28Z06IaTJ9W7/5rk2yjqKVO2fmeDDWVXJk4qH6ZD/CIunwMMpg0jbMWpJnZaer8fvtLHsJyGjKls3s5oi+PrGzVK00VBwI8wuD+tum33VubH9a0COshHxhCVjkfEXVubID78dyM+ug38WvvCW4zhy1inl4eMYyqRbX8oRPTWUFjCwka6HpWYhbi2kCCm37ZzJlRFADgPP4sOQHw5px/2J7lqZXEnczyMdALMkYOm38rUCnC5WQimpZg0cEo76cgTDV1689UIqaB6JEtJf2se4duxamMfpOAQ8kFuup8t55BMprp54FXjvu8Lxc7Lq+3iuXBmT2bY34MBQR9qF6c9+ndZkLaI2sUhj7Xm90mYdbyjKMmfVYc9eYQQr4BDK8y0SdsMYogXgrUWT1wZe2/MdhYxUV2qPYdec=
+addons:
+  code_climate:
+    repo_token: 2fda9da447993fe173be2bc615ab8746c54c00a7b87809af4b6852b98caa8473
+before_install:
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  - phpenv config-rm xdebug.ini
+  - composer --verbose self-update --$COMPOSER_CHANNEL
+install:
+  - composer --verbose install --prefer-dist
+script:
+  - cd $TRAVIS_BUILD_DIR/web
+  - "./../vendor/bin/drush site-install --verbose --yes --db-url=sqlite://tmp/site.sqlite"
+  - "./../vendor/bin/drush runserver http://127.0.0.1:8080 &"
+  - sleep 3
+  - "./../vendor/bin/phpunit -c core --testsuite unit --exclude-group Composer,PageCache,DependencyInjection"
+after_script:
+  - "./../vendor/bin/test-reporter"
+after_success:
+  - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+  - export REPO=corycollier/web
+  - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - docker build -f Dockerfile -t $REPO:$COMMIT .
+  - docker tag $REPO:$COMMIT $REPO:$TAG
+  - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+  - docker push $REPO
