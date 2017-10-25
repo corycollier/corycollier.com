@@ -1,5 +1,7 @@
 # corycollier.com
 
+version 1.2.1
+
 This site was written using [Silex](https://silex.symfony.com/) and [Parsedown](https://github.com/erusev/parsedown). The code is easily viewable on [GitHub](https://github.com/corycollier/corycollier.com). The gist of it is Silex intercepts the requests, and tries to find a markdown file matching the request. If it can't find one, an error page is displayed.
 
 I don't host any front-end assets here. [Bootstrap](http://getbootstrap.com/), [Font Awesome](http://fontawesome.io/), and [jQuery](https://jquery.com/) are the UI tools of choice, and I see no need to host them myself.
