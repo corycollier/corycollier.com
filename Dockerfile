@@ -6,7 +6,8 @@ RUN apt-get -y update
 RUN apt-get -y install \
     wget \
     git \
-    vim
+    vim \
+    cron
 
 # PHP Configuration updates
 RUN echo "date.timezone = 'America/New_York'" >> /etc/php.ini
