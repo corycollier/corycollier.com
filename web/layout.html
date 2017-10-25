@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Testing</title>
-        <meta name="description" content="">
+        <title>Cory Collier</title>
+        <meta name="description" content="The blog of Cory Collier. Posts about Tech, Fitness, and Emotional Maturity">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="manifest" href="site.webmanifest">
@@ -17,9 +17,21 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  />
     </head>
     <body>
-        <style>h1, h2, h3, h4 {width:100%}</style>
+        <style>
+        h1, h2, h3, h4 {width:100%}
+        body {background: url('https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-487034.jpg') center center;}
+        .navbar, .masthead, .content {background: rgba(0,0,0,0.75); color: #fff;}
+        footer {background: #000; color: #fff; padding-top:20px;}
+        .masthead {padding-top:10px;margin-top:40px; min-height:120px;}
+        .content {min-height:500px;}
+        a, pre {color: #3cc47c;}
+        a:hover {color: #0cc40c;}
+        hr {width:100%;}
+        .navbar{background:#000;}
+        h1 a, h2 a, h3 a {color: #fff;}
+        </style>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right"
                         aria-expanded="false"
@@ -28,19 +40,15 @@
                         data-target="#navigation"
                         aria-controls="navigation"
                         aria-label="Toggle navigation">
-                    Menu
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navigation">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/"><small>Home</small></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact.html">Contact</a>
+                            <a class="nav-link" href="/about.html"><small>About</small></a>
                         </li>
                     </ul>
                 </div>
@@ -51,17 +59,19 @@
             <div class="container">
                 <div class="row">
                     <div class="site-heading">
-                        <h1>Cory Collier's Blog</h1>
-                        <span class="subheading">I spew my thoughts on here.</span>
+                        <h1><a href="/">Cory Collier</a></h1>
+                        <small class="text-muted subheading">Thoughts on Tech, Fitness, and Emotional Maturity</small>
                     </div>
                 </div>
             </div>
         </header>
 
         <!-- Content -->
-        <div class="container">
-            <div class="row">
-            {CONTENT}
+        <div class="content">
+            <div class="container">
+                <div class="row">
+                {CONTENT}
+                </div>
             </div>
         </div>
 
@@ -87,8 +97,17 @@
                                     </span>
                                 </a>
                             </li>
+                            <li class="list-inline-item">
+                                <a href="https://instagram.com/ftpcory">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
                         </ul>
-                        <p class="copyright text-muted">Copyright &copy; Cory Collier 2017</p>
+                        <small class="copyright text-muted">Copyright &copy; Cory Collier 2017</small>
+                        <small class="text-muted">v1.2.0</small>
                     </div>
                 </div>
             </div>
@@ -107,7 +126,7 @@
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+            ga('create','UA-1842259-1','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
     </body>
