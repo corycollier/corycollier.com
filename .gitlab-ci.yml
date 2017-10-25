@@ -1,0 +1,14 @@
+stages:
+    - build
+    - deploy
+
+build:
+    stage: build
+    script:
+        - docker build corycollier/corycollier.com
+        - docker login --username="corycollier" --password="$DOCKER_PASS"
+        - docker push corycollier/corycollier.com
+
+deploy:
+    stage: deploy
+    script:
