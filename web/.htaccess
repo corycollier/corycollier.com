@@ -9,5 +9,5 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-    Header set X-Release-Version "1.2.0"
+    Header set X-Release-Version "1.2.1"
 </IfModule>
