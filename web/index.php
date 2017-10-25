@@ -1,7 +1,7 @@
 <?php
 
 // web/index.php
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +17,7 @@ $app = new Silex\Application();
  *
  * @return Response A Symfony Response object.
  */
-function view($filename) {
+function view($filename, $status = 200) {
     $raw = file_get_contents($filename);
     $parse = new Parsedown();
     $contents = $parse->text($raw);
@@ -28,7 +28,7 @@ function view($filename) {
         '{CONTENT}' => $contents,
     ]);
 
-    return new Response($result);
+    return new Response($result, $status);
 };
 
 /**
@@ -65,7 +65,7 @@ $app->match('{url}', function ($url) use ($app) {
 // Handle the problems
 $app->error(function(\Exception $exception, Request $request, $code) {
     $filename = filename('404.html');
-    return view($filename);
+    return view($filename, 404);
 });
 
 // Get some.
