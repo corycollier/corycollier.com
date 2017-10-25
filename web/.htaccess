@@ -13,10 +13,6 @@
 
 </IfModule>
 
-<IfModule mod_headers.c>
-    Header set X-Release-Version "1.2.1"
-</IfModule>
-
 <IfModule mod_autoindex.c>
     Options -Indexes
 </IfModule>
@@ -55,4 +51,9 @@
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
+</IfModule>
+
+
+<IfModule mod_headers.c>
+    Header set X-Release-Version "1.3.0"
 </IfModule>
