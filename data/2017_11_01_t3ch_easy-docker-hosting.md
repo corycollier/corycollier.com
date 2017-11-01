@@ -27,9 +27,13 @@ docker run -itd \
 
 I'm basically volume mounting my code into my apache web server. You'll notice the image name that I'm using is a [docker container of my own](https://github.com/corycollier/docker-apache-php). That container sets `/var/www/html/web` as the docroot. That reflects how my code actually works.
 
+Something else to notice, I map port 8000 to port 80. Apache thinks it's running production, but I stick nginx on the front of everything, to reduce load to apache. Old habits die hard I guess.
+
 Finally, I use a poor-man's version of automatic deployments:
 Crontab with a private key to git pull master every hour.
 
 ```
 * */1 * * * su -s /bin/sh nobody -c 'cd ~/sites/corycollier.com && /usr/bin/git pull origin master'
 ```
+
+That's pretty much it. I don't use a database for this site, so I don't have to do any database updates when I deploy code. Filesystem and caching handles all the rest of it. 
