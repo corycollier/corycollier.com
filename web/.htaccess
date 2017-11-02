@@ -20,7 +20,6 @@
   # CSS
     ExpiresByType text/css                              "access plus 1 year"
 
-
   # Data interchange
     ExpiresByType application/atom+xml                  "access plus 1 hour"
     ExpiresByType application/rdf+xml                   "access plus 1 hour"
@@ -33,7 +32,6 @@
     ExpiresByType application/xml                       "access plus 0 seconds"
     ExpiresByType text/xml                              "access plus 0 seconds"
 
-
   # Favicon (cannot be renamed!) and cursor images
     ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
     ExpiresByType image/x-icon                          "access plus 1 week"
@@ -41,14 +39,12 @@
   # HTML
     ExpiresByType text/html                             "access plus 0 seconds"
 
-
   # Manifest files
     ExpiresByType application/manifest+json             "access plus 1 week"
     ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
     ExpiresByType text/cache-manifest                   "access plus 0 seconds"
 
 </IfModule>
-
 
 <IfModule mod_headers.c>
     Header set X-Release-Version "1.5.2"
