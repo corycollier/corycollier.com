@@ -53,9 +53,6 @@ function filename($path) {
 
 // Match the requests
 $app->match('{url}', function ($url) use ($app) {
-    if (! $url) {
-        $url = $_SERVER['REQUEST_URI'];
-    }
     $filename = filename($url);
 
     if (! file_exists($filename)) {
