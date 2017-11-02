@@ -47,5 +47,5 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-    Header set X-Release-Version "1.5.2"
+    Header set X-Release-Version "1.5.3"
 </IfModule>
