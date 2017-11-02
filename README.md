@@ -1,6 +1,6 @@
 # corycollier.com
 
-version 1.4.0
+version 1.5.0
 
 This site was written using [Silex](https://silex.symfony.com/) and [Parsedown](https://github.com/erusev/parsedown). The code is easily viewable on [GitHub](https://github.com/corycollier/corycollier.com). The gist of it is Silex intercepts the requests, and tries to find a markdown file matching the request. If it can't find one, an error page is displayed.
 
