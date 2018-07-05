@@ -2,6 +2,10 @@
     "name": "corycollier/corycollier.com",
     "description": "Public website for Cory Collier",
     "type": "project",
+    "require": {
+        "erusev/parsedown": "^1.6",
+        "silex/silex": "^2.2"
+    },
     "license": "MIT",
     "authors": [
         {
@@ -10,10 +14,6 @@
             "role": "developer"
         }
     ],
-    "require": {
-        "erusev/parsedown": "^1.6",
-        "silex/silex": "^2.2"
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
