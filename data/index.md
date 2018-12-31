@@ -1,4 +1,4 @@
-## [2018 Wrap Up](/2017/11/01/2018-wrap-up.html)
+## [2018 Wrap Up](/2018/12/31/2018-wrap-up.html)
 > <small class="text-muted">November 1, 2017</small>
 
 > 2018 Started off with heartbreak and loneliness. 2018 is ending with contentment and a lot of hope for an awesome future.
