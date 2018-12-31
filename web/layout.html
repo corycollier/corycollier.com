@@ -1,26 +1,88 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="" class="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
         <title>Cory Collier</title>
+
         <meta name="description" content="The blog of Cory Collier. Posts about Tech, Fitness, and Emotional Maturity">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="Hwne3SHiaVMKSnFaqNWt88CO6Lknb4YnNNbFE1u-fWc" />
+        <link rel="shortlink" href="corycollier.com">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="corycollier.com - Father, believer in Christ. I write software for a living. I do CrossFit for fun." />
+        <meta property="og:description" content="Father, believer in Christ. I write software for a living. I do CrossFit for fun." />
+        <meta property="og:url" content="https://corycollier.com/" />
+        <meta property="og:site_name" content="corycollier.com" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:description" content="Father, believer in Christ. I write software for a living. I do CrossFit for fun." />
+        <meta name="twitter:title" content="coryclllier.com - Father, believer in Christ. I write software for a living. I do CrossFit for fun." />
+
+        <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+        <link rel="dns-prefetch" href="https://wallpapers.wallhaven.cc">
+        <link rel="dns-prefetch" href="https://code.jquery.com">
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+        <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+        <link rel="manifest" href="/manifest.json">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
             integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
             crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"  />
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Cory Collier",
+    "url": "https://corycollier.com",
+    "jobTitle": "Systems Engineering Lead",
+    "height": "75 inches",
+    "gender": "male",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Orlando",
+        "addressRegion": "FL",
+        "postalCode": "32801"
+    },
+    "sameAs": [
+        "https://twitter.com/@corycollier",
+        "https://www.facebook.com/corycollier",
+        "https://plus.google.com/+corycollier",
+        "https://www.linkedin.com/in/corycollier",
+        "https://www.instagram.com/ftpcory",
+        "https://www.pinterest.com/corycollier"
+    ],
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://avatars3.githubusercontent.com/u/87657?s=460&v=4",
+        "height": "196",
+        "width": "196"
+    }
+}
+</script>
     </head>
-    <body>
+    <body class="">
         <style>
         h1, h2, h3, h4 {width:100%}
-        body {background: url('https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-487034.jpg') center center;}
+        body {background: #333;}
         .navbar, .masthead, .content {background: rgba(0,0,0,0.75); color: #fff;}
+        .jumbotron { background: url('https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-487034.jpg') top center;}
+        .jumbotron .container { background: rgba(0,0,0,0.75)}
         footer {background: #000; color: #fff; padding-top:20px;}
         .masthead {padding-top:10px;margin-top:40px; min-height:120px;}
         .content {min-height:500px;}
@@ -31,7 +93,7 @@
         h1 a, h2 a, h3 a {color: #fff;}
         </style>
         <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
             <div class="container">
                 <button class="navbar-toggler navbar-toggler-right"
                         aria-expanded="false"
@@ -54,35 +116,34 @@
                 </div>
             </div>
         </nav>
-        <!-- Page Header -->
-        <header class="masthead">
-            <div class="container">
-                <div class="row">
-                    <div class="site-heading">
-                        <h1><a href="/">Cory Collier</a></h1>
-                        <small class="text-muted subheading">Thoughts on Tech, Fitness, and Emotional Maturity</small>
+
+        <main role="main">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1><a href="/">Cory Collier</a></h1>
+                    <small class="text-muted subheading">Thoughts on Tech, Fitness, and Emotional Maturity</small>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="content cover-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            {CONTENT}
+                        </div>
                     </div>
                 </div>
             </div>
-        </header>
-
-        <!-- Content -->
-        <div class="content">
-            <div class="container">
-                <div class="row">
-                {CONTENT}
-                </div>
-            </div>
-        </div>
+        </main>
 
         <!-- Footer -->
-        <footer>
+        <footer class="footer ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item">
-                                <a href="https://twitter.com/corycollier">
+                                <a href="https://twitter.com/corycollier" target="_blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -90,7 +151,7 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://github.com/corycollier">
+                                <a href="https://github.com/corycollier" target="_blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -98,16 +159,24 @@
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="https://instagram.com/ftpcory">
+                                <a href="https://instagram.com/ftpcory" target="_blank">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a>
                             </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/corycollier" target="_blank">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
                         </ul>
-                        <small class="copyright text-muted">Copyright &copy; Cory Collier 2017</small>
-                        <small class="text-muted">v1.2.0</small>
+                        <small class="copyright text-muted">Copyright &copy; Cory Collier 2019</small>
+                        <small class="text-muted">v1.5.3</small>
                     </div>
                 </div>
             </div>
@@ -124,10 +193,15 @@
             crossorigin="anonymous"></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1842259-22"></script>
         <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-1842259-1','auto');ga('send','pageview')
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-1842259-22');
         </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
     </body>
 </html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->

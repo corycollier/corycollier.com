@@ -37,6 +37,9 @@ function view($filename, $status = 200) {
  * @return string The path to the markdown file.
  */
 function filename($path) {
+    if (! $file && $_SERVER['REQUEST_URI'] !== '/index.php') {
+        $file = $_SERVER['REQUEST_URI'];
+    }
     $file = strtr($path, [
         '/'     => '_',
         '.html' => '.md',
@@ -45,6 +48,7 @@ function filename($path) {
     if (!$file) {
         $file = 'index.md';
     }
+
 
     $filename = __DIR__ . '/../data/' . $file;
 
