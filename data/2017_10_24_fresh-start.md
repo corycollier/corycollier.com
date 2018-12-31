@@ -1,4 +1,5 @@
 <div class="col-md-12">
+
 ## Fresh Start
 > <small class="text-muted">October 24, 2017</small>
 

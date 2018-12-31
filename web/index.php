@@ -20,6 +20,7 @@ $app = new Silex\Application();
 function view($filename, $status = 200) {
     $raw = file_get_contents($filename);
     $parse = new Parsedown();
+    $parse->setMarkupEscaped(false);
     $contents = $parse->text($raw);
 
     $layout = file_get_contents(__DIR__ . '/layout.html');

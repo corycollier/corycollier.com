@@ -3,7 +3,7 @@
     "description": "Public website for Cory Collier",
     "type": "project",
     "require": {
-        "erusev/parsedown": "^1.6",
+        "erusev/parsedown": "^1.8",
         "silex/silex": "^2.2"
     },
     "license": "MIT",
