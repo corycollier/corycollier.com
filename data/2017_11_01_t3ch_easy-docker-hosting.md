@@ -1,3 +1,5 @@
+<div class="col-md-12">
+
 # Easy Docker Hosting
 
 There's a lot to be said about containerizing websites and applications. Much smarter people than I have made the case for it. If you're considering docker for hosting, here's how I host this site:
@@ -36,4 +38,5 @@ Crontab with a private key to git pull master every hour.
 * */1 * * * su -s /bin/sh nobody -c 'cd ~/sites/corycollier.com && /usr/bin/git pull origin master'
 ```
 
-That's pretty much it. I don't use a database for this site, so I don't have to do any database updates when I deploy code. Filesystem and caching handles all the rest of it. 
+That's pretty much it. I don't use a database for this site, so I don't have to do any database updates when I deploy code. Filesystem and caching handles all the rest of it.
+</div>
