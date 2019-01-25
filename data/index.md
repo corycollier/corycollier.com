@@ -2,6 +2,21 @@
 <div class="col-md-4">
 <div class="card p-2 mt-1 bg-dark">
 
+## [Local Development With Docker and SSL](/2019/01/24/local-development-with-docker-and-ssl.html)
+> <small class="text-muted">January 24, 2019</small>
+
+> Even local web development is being forced to use SSL these days. Well, there's no sense in fighting the times. It's time to figure out how to create local SSL certs to serve your local dev sites.
+
+<div class="card-footer text-right">
+<a class="btn btn-success" href="/2019/01/24/local-development-with-docker-and-ssl.html" role="button">Read More</a>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-4">
+<div class="card p-2 mt-1 bg-dark">
+
 ## [2018 Wrap Up](/2018/12/31/2018-wrap-up.html)
 > <small class="text-muted">November 1, 2017</small>
 
