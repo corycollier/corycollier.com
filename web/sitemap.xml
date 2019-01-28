@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://corycollier.com/</loc>
+        <lastmod>2019-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://corycollier.com/2017/10/24/fresh-start.html</loc>
+        <lastmod>2017-10-24</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://corycollier.com/2017/11/01/t3ch/easy-docker-hosting.html</loc>
+        <lastmod>2017-11-01</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://corycollier.com/2018/12/31/2018-wrap-up.html</loc>
+        <lastmod>2018-12-31</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://corycollier.com/2019/01/24/local-development-with-docker-and-ssl.html</loc>
+        <lastmod>2019-01-24</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://corycollier.com/about.html</loc>
+        <lastmod>2019-01-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>
